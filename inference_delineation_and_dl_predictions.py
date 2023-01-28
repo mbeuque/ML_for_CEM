@@ -19,6 +19,7 @@ import numpy as np
 import ntpath
 from tqdm import tqdm
 
+#todo: try with example inf
 
 def detect_and_classify_lesions(path_input_recombined, path_input_low_energy, model):
     img_bgr = preprocessing(path_input_low_energy, path_input_recombined)
@@ -62,11 +63,10 @@ if __name__ == '__main__':
     parser.add_argument('--path_dir_csv', help='Path to the directory containing CEM low energy path and matching CEM '
                                                'recombined path')
     parser.add_argument('--path_dir_to_save', help='Path to the directory to save the results')
-    parser.add_argument('--path_dir_weights', help='Path to the weights obtained with train.py')
+    parser.add_argument('--path_dir_weights', help='Path to the weights obtained with train_delineation_model.py')
     args = parser.parse_args()
 
     ##define paths
-
     df_paths = pd.read_csv(args.path_dir_csv)
     list_paths_low_energy = list(df_paths["low_energy_paths"])
     list_paths_recombined = list(df_paths["recombined_paths"])
@@ -85,4 +85,4 @@ if __name__ == '__main__':
         pickle.dump([mask_prediction, dict_prediction], file)
         file.close()
 
-    print("all predictions are saved")
+    print("predictions file generated for " + str(i) + "images")
