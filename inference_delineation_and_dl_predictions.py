@@ -10,7 +10,7 @@ from keras_maskrcnn import models
 from keras_retinanet.utils.image import preprocess_image, resize_image
 
 from keras_maskrcnn.bin.train import create_models
-from preprocessing.utils import *
+from preprocessing.generate_jpg import *
 # set tf backend to allow memory to grow, instead of claiming everything
 import tensorflow as tf
 
@@ -59,15 +59,15 @@ def detect_and_classify_lesions(path_input_recombined, path_input_low_energy, mo
 
 if __name__ == '__main__':
 
-    parser = argparse.ArgumentParser(description='Inference code for predicting mask and class label')
-    parser.add_argument('--path_dir_csv', help='Path to the directory containing CEM low energy path and matching CEM '
+    parser = argparse.ArgumentParser(description='Inference code for predicting mask and class label with Mask RCNN')
+    parser.add_argument('--path_csv', help='Path to the csv containing CEM low energy path and matching CEM '
                                                'recombined path')
     parser.add_argument('--path_dir_to_save', help='Path to the directory to save the results')
     parser.add_argument('--path_dir_weights', help='Path to the weights obtained with train_delineation_model.py')
     args = parser.parse_args()
 
     ##define paths
-    df_paths = pd.read_csv(args.path_dir_csv)
+    df_paths = pd.read_csv(args.path_csv)
     list_paths_low_energy = list(df_paths["low_energy_paths"])
     list_paths_recombined = list(df_paths["recombined_paths"])
 
