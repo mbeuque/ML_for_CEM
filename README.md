@@ -6,8 +6,6 @@ The repository consists in two parts:
 - The first part allows the user to train/test a Mask-RCNN model which predicts the location of a candidate suspicious lesion and predicts a label (benign/malignant).
 - The second part allows the user to train/test a machine learning model using radiomics on either the ground truth suspicious lesions or the candidate lesion predicted in the first part. It returns a predicted label benign or malignant.
 
-#TODO: check if can keep example input folder
-
 ## Installation
 This repository is using Python 3.7 and works with keras version 2.2.4.
 Install the packages in requirements.txt file to start using the repository.
@@ -30,7 +28,8 @@ The file should contain "low_energy_paths" and "recombined_paths" headers.
 To train and test a machine learning model using radiomic features, the features needs to be extracted from the data.
 You will need a csv file containing the following headers: "path_mask","path_low_energy", "path_recombined", "outcome" (which needs to be 0 or 1) to generate a csv file containing the features to use.
 
-## Disclaimer
+## Disclaimer and license
 The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
+The source code for this repository is licensed under the Apache license v2.0 (see LICENSE.txt).
 
 [link]: https://github.com/fizyr/keras-maskrcnn

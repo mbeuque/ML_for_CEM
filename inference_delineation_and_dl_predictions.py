@@ -19,8 +19,6 @@ import numpy as np
 import ntpath
 from tqdm import tqdm
 
-#todo: try with example inf
-
 def detect_and_classify_lesions(path_input_recombined, path_input_low_energy, model):
     img_bgr = preprocessing(path_input_low_energy, path_input_recombined)
 
