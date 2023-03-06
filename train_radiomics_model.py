@@ -10,6 +10,7 @@ from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from preprocessing.radiomics_extraction import initialize_feature_extractor,generate_features_table
 from radiomics_pipeline.utils import preprocessing_train, preprocessing_test
 
+#todo: add clinical feature option and inference only
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Inference code for training a ML model with radiomics')
@@ -90,6 +91,7 @@ if __name__ == '__main__':
 
     ##save everything
     if args.path_to_save_parameters is not None:
+
         path_to_save = args.path_to_save_parameters
 
         if args.find_optimal_features:
