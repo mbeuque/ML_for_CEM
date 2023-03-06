@@ -1,5 +1,5 @@
 # Keras Machine Learning for contrast-enhanced mammography 
-Keras implementation of RetinaNet object detection as described in [From detection to classification of lesions in contrast-enhanced mammography combining deep learning and handcrafted radiomics](link)
+Keras implementation of RetinaNet object detection as described in [Combining deep learning and handcrafted radiomics for classification of suspicious lesions on contrast-enhanced mammograms](link)
 by Manon P.L. Beuque, Marc B.I. Lobbes, Yvonka van Wijk, Yousif Widaatalla, Sergey Primakov, Michael Majer, Corinne Balleyguier, Henry C. Woodruff, Philippe Lambin.
 
 The repository consists in two parts: 
